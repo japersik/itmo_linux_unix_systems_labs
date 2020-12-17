@@ -1,0 +1,4 @@
+#!/bin/bash
+for file in $(ls $1); do
+	wc -c $1/$file
+done;

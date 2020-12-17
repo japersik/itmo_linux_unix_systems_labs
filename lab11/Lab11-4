@@ -1,0 +1,11 @@
+#!/bin/bash
+usage(){
+  echo "usage: Lab11-4 ..."; 
+} 
+if [ $# -eq 0 ]; then
+  usage
+else
+  for file in $(ls $1); do
+	  wc -c $1/$file
+  done;
+fi
