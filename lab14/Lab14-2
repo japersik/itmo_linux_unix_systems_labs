@@ -1,0 +1,4 @@
+#!/bin/bash
+if [[ $1 =~ bash|nologin ]]; then
+grep $1 /etc/passwd | wc -l
+fi

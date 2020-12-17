@@ -1,0 +1,6 @@
+#!/bin/bash
+if [ $1 = "user" ]; then
+  cut -d: -f1,5 /etc/passwd | sort -t ":" -k1
+elif [ $1 = "gecos" ]; then
+  cut -d: -f1,5 /etc/passwd | sort -t ":" -k2
+fi
