@@ -1,0 +1,14 @@
+#! /bin/bash
+if [ -n "$3" ]
+then
+count=0
+for i in $@; do
+count=$((count + 1))
+if [ $count -ge 3 ]
+then
+tar -C $2 -xvzf $1 $i
+fi
+done
+else
+tar -C $2 -xvzf $1
+fi
