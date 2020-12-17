@@ -1,0 +1,10 @@
+#!/bin/bash
+LST=`ifconfig |grep -vE "^  *.*$"|grep -vE "^ *$"|awk -F : '{ print $1 }'`
+
+for i in $LST; do
+    L=`ifconfig | sed -ne "/$i:.*/{n;p;}"`
+    if echo $L | grep "inet " >/dev/null; then
+       echo -en "$i:\t"
+       echo $L| awk '{ print $1,$2 }'
+    fi
+done
