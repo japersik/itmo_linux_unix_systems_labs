@@ -1,0 +1,4 @@
+#!/bin/bash 
+for file in $(ls $1 | grep “.jpeg”); do 
+cp $1/$file $1/”${file:: -4}jpg”; 
+done;  

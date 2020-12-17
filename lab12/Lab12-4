@@ -1,0 +1,12 @@
+#!/bin/bash
+usage(){
+    echo "usage: Lab12-4 ..."
+}
+files=$(ls $1 | grep "$2")
+if [[ -z $files ]] || [[ $# -ne 2 ]]; then
+    usage
+else
+    for file in $files; do
+        basename $file $2
+    done
+fi
