@@ -1,0 +1,5 @@
+#!/bin/bash
+for i in $@; do
+    a=$(df $i 2>/dev/null | awk '{ print $1,$6,$4 }' | tail -n +2 )
+    echo "$a"
+done
